@@ -39,7 +39,7 @@ class Orc extends Animal {
         System.out.println(nome + " esta gritand");
     }
 
-    @Override
+    
     public void andar() {
         System.out.println(nome + " esta andando");
     }
@@ -62,4 +62,5 @@ public class Main {
         meuDragao.voar();
         meuDragao.aterrissar();
     }
+
 }

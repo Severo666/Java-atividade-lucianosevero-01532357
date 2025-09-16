@@ -43,7 +43,7 @@ class Cachorro extends Animal {
     public void andar() {
         System.out.println(nome + " Está correndo ");
     }
-} // <-- fecha a classe Cachorro
+} 
 
 public class Main {
     public static void main(String[] args) {
@@ -63,3 +63,4 @@ public class Main {
         minhaAve.aterrissar();
     }
 }
+

@@ -1,6 +1,6 @@
 class Animal {
-    String nome;
-    String raca;
+    private String nome;
+    private String raca;
 
     public Animal(String nome, String raca) {
         this.nome = nome;
@@ -8,13 +8,22 @@ class Animal {
     }
 
     public void comer() {
-        System.out.println(nome + " esta comendo.");
+        System.out.println(this.nome + " está comendo.");
     }
 
     public void andar() {
-        System.out.println(nome + " esta andando.");
+        System.out.println(this.nome + " está andando.");
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getRaca() {
+        return raca;
     }
 }
+
 
 class Dragao extends Animal {
     public Dragao(String nome, String raca) {
@@ -22,13 +31,14 @@ class Dragao extends Animal {
     }
 
     public void voar() {
-        System.out.println(nome + " esta voando");
+        System.out.println(this.nome + " está voando.");
     }
 
     public void aterrissar() {
-        System.out.println(nome + " esta aterrissando");
+        System.out.println(this.nome + " está aterrissando.");
     }
 }
+
 
 class Orc extends Animal {
     public Orc(String nome, String raca) {
@@ -36,31 +46,34 @@ class Orc extends Animal {
     }
 
     public void latir() {
-        System.out.println(nome + " esta gritand");
+        System.out.println(this.nome + " está gritando."); 
     }
 
-    
     public void andar() {
-        System.out.println(nome + " esta andando");
+        System.out.println(this.nome + " está andando.");
     }
 }
 
+
 public class Main {
     public static void main(String[] args) {
+        
         Orc meuOrc = new Orc("Grom", "Orc Sangrento");
-        Dragao meuDragao = new Dragao("Smaug", "Dragao Flamejante");
+        Dragao meuDragao = new Dragao("Smaug", "Dragão Flamejante");
 
-        System.out.println("Nome do orc: " + meuOrc.nome + " | Raca: " + meuOrc.raca);
+        System.out.println("Informações do Orc");
+        System.out.println("Nome do orc: " + meuOrc.getNome() + " | Raça: " + meuOrc.getRaca());
         meuOrc.comer();
         meuOrc.latir();
         meuOrc.andar();
 
-        System.out.println();
-
-        System.out.println("Nome do dragao: " + meuDragao.nome + " | Raca: " + meuDragao.raca);
+        System.out.println("\nInformações do Dragão");
+        System.out.println("Nome do dragao: " + meuDragao.getNome() + " | Raça: " + meuDragao.getRaca());
         meuDragao.comer();
         meuDragao.voar();
         meuDragao.aterrissar();
     }
+}
 
 }
+

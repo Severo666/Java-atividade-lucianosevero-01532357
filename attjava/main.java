@@ -1,6 +1,6 @@
 class Animal {
-    private String nome;
-    private String raca;
+    String nome;
+    String raca;
 
     public Animal(String nome, String raca) {
         this.nome = nome;
@@ -8,72 +8,58 @@ class Animal {
     }
 
     public void comer() {
-        System.out.println(this.nome + " está comendo.");
+        System.out.println(nome + " esta comendo.");
     }
 
     public void andar() {
-        System.out.println(this.nome + " está andando.");
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getRaca() {
-        return raca;
+        System.out.println(nome + " esta andando.");
     }
 }
 
-
-class Dragao extends Animal {
-    public Dragao(String nome, String raca) {
+class Ave extends Animal {
+    public Ave(String nome, String raca) {
         super(nome, raca);
     }
 
     public void voar() {
-        System.out.println(this.nome + " está voando.");
+        System.out.println(nome + " Está caindo");
     }
 
     public void aterrissar() {
-        System.out.println(this.nome + " está aterrissando.");
+        System.out.println(nome + " Está pulando");
     }
 }
 
-
-class Orc extends Animal {
-    public Orc(String nome, String raca) {
+class Cachorro extends Animal {
+    public Cachorro(String nome, String raca) {
         super(nome, raca);
     }
 
     public void latir() {
-        System.out.println(this.nome + " está gritando."); 
+        System.out.println(nome + " Está gritando");
     }
 
+    @Override
     public void andar() {
-        System.out.println(this.nome + " está andando.");
+        System.out.println(nome + " Está correndo ");
     }
-}
-
+} // <-- fecha a classe Cachorro
 
 public class Main {
     public static void main(String[] args) {
-        
-        Orc meuOrc = new Orc("Grom", "Orc Sangrento");
-        Dragao meuDragao = new Dragao("Smaug", "Dragão Flamejante");
+        Cachorro meuCachorro = new Cachorro("Rex", "Doberman");
+        Ave minhaAve = new Ave("Piu", "Passarinho");
 
-        System.out.println("Informações do Orc");
-        System.out.println("Nome do orc: " + meuOrc.getNome() + " | Raça: " + meuOrc.getRaca());
-        meuOrc.comer();
-        meuOrc.latir();
-        meuOrc.andar();
+        System.out.println("Nome do cachorro: " + meuCachorro.nome + " | Raca: " + meuCachorro.raca);
+        meuCachorro.comer();
+        meuCachorro.latir();
+        meuCachorro.andar();
 
-        System.out.println("\nInformações do Dragão");
-        System.out.println("Nome do dragao: " + meuDragao.getNome() + " | Raça: " + meuDragao.getRaca());
-        meuDragao.comer();
-        meuDragao.voar();
-        meuDragao.aterrissar();
+        System.out.println();
+
+        System.out.println("Nome da ave: " + minhaAve.nome + " | Raca: " + minhaAve.raca);
+        minhaAve.comer();
+        minhaAve.voar();
+        minhaAve.aterrissar();
     }
 }
-
-}
-
